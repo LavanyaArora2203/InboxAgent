@@ -1,0 +1,206 @@
+/* -------------------------------------------------------------------- */
+/* Button                                                                */
+/* -------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease, opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: #fff;
+}
+.btn-primary:not(:disabled):hover { background: #7c4ee8; }
+
+.btn-secondary {
+  background: var(--bg-elevated-2);
+  border-color: var(--border);
+  color: var(--text-h);
+}
+.btn-secondary:not(:disabled):hover { border-color: var(--brand-border); }
+
+.btn-danger {
+  background: var(--danger-bg);
+  border-color: rgba(248, 113, 113, 0.35);
+  color: var(--danger);
+}
+.btn-danger:not(:disabled):hover { border-color: var(--danger); }
+
+.btn-success {
+  background: var(--success-bg);
+  border-color: rgba(52, 211, 153, 0.35);
+  color: var(--success);
+}
+.btn-success:not(:disabled):hover { border-color: var(--success); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+}
+.btn-ghost:not(:disabled):hover { color: var(--text-h); }
+
+.btn-sm { padding: 6px 12px; font-size: 0.8125rem; }
+.btn-lg { padding: 13px 26px; font-size: 1rem; }
+.btn-block { width: 100%; }
+
+/* -------------------------------------------------------------------- */
+/* Card                                                                  */
+/* -------------------------------------------------------------------- */
+
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.card-hover {
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.card-hover:hover {
+  border-color: var(--brand-border);
+}
+
+/* -------------------------------------------------------------------- */
+/* Badge / status pill                                                  */
+/* -------------------------------------------------------------------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.badge-brand   { background: var(--brand-bg);   color: var(--brand);   border-color: var(--brand-border); }
+.badge-success { background: var(--success-bg); color: var(--success); border-color: rgba(52,211,153,0.3); }
+.badge-warning { background: var(--warning-bg); color: var(--warning); border-color: rgba(251,191,36,0.3); }
+.badge-danger  { background: var(--danger-bg);  color: var(--danger);  border-color: rgba(248,113,113,0.3); }
+.badge-info    { background: var(--info-bg);    color: var(--info);    border-color: rgba(96,165,250,0.3); }
+.badge-neutral { background: var(--neutral-bg); color: var(--neutral); border-color: rgba(156,163,175,0.3); }
+
+/* -------------------------------------------------------------------- */
+/* Spinner                                                               */
+/* -------------------------------------------------------------------- */
+
+.spinner {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: currentColor;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+.spinner-lg {
+  width: 32px;
+  height: 32px;
+  border-width: 3px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* -------------------------------------------------------------------- */
+/* State panels (loading / empty / error)                               */
+/* -------------------------------------------------------------------- */
+
+.state-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  padding: 56px 24px;
+  color: var(--text-muted);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-md);
+}
+
+.state-panel-icon {
+  font-size: 1.75rem;
+}
+
+.state-panel.state-error {
+  border-color: rgba(248, 113, 113, 0.3);
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+/* -------------------------------------------------------------------- */
+/* Form controls                                                        */
+/* -------------------------------------------------------------------- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.field label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.field-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.input {
+  background: var(--bg-elevated-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  color: var(--text-h);
+  outline: none;
+  transition: border-color 0.15s ease;
+  width: 100%;
+}
+
+.input:focus {
+  border-color: var(--brand-border);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
